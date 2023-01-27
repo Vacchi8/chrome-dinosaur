@@ -1,3 +1,11 @@
+/** 
+	\file game.c
+	\author Farbod Ahmadian
+	\version 1.0
+	\date 2023-01-27
+*/
+
+
 #include <ncurses.h>
 #include <unistd.h>
 #include <time.h>
@@ -8,7 +16,16 @@
 #include "appearance.h"
 #include "minunit.h"
 
-// Check if the game is going to be finished in this turn of loop
+/**
+	\fn int checkGame(int y, int x, int diY, int diX)
+	\brief Check if the game is going to finish in this turn of loop (controlla se la partita finisce in questo giro di ciclo)
+	\param int y: y coordinate  (coordinata y)
+	\param int x: x coordinate  (coordinata x)
+	\param int diY: y coordinate of the dinosaur (coordinata y del dinosauro)
+	\param int diX: x coordinate of the dinosaur (coordinata y dei dinosauro)
+	\return returns '1' if 'diY == y' so if the dinosaur touch the cactus, instead returns '0' if the absolute value of ((diX+14)-x) is <= 4   (ritorna '1' se 'diY == y' quindi se il dinosauro tocca il cactus, invece ritorna '0' se il valore assoluto di ((diX+14)-x) e' <= 4)
+*/
+
 int checkGame(int y, int x, int diY, int diX) {
 	if (diY == y) {
 		if (abs((diX+14)-x) <= 4) {
@@ -18,7 +35,13 @@ int checkGame(int y, int x, int diY, int diX) {
 	return 1;
 }
 
-// Make game faster
+/**
+	\fn int computeTime(int delayTime)
+	\brief Make the game faster (rende il gioco piu' veloce)
+	\param int delayTime: delay time (tempo di ritardo)
+	\return returns the modified delay time to speed op the game (ritorna il tempo di ritardo modificato in modo da velocizzare il gioco) 
+*/
+
 int computeTime(int delayTime) {
 	if (delayTime >= 250000) {
 		delayTime -= 1000;
@@ -32,7 +55,14 @@ int computeTime(int delayTime) {
 	return delayTime;
 }
 
-// Which dinosaur should be printed
+/**
+	\fn void showdinosaur(int diY, int diX)
+	\brief Check which dinosaur should be printed (controlla quale dinosauro deve essere stampato)
+	\param int y: diY coordinate of dinosaur (coordinata y del dinosauro)
+	\param int x: diX coordinate of dinosaur (coordinata x del dinosauro)
+	\return void function, no return (funzione void, nessun return)
+*/
+
 void showdinosaur(int diY, int diX) {
 	static int counter = 0;
 	if (counter == 0) {
