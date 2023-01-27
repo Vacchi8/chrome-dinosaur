@@ -75,7 +75,14 @@ void showdinosaur(int diY, int diX) {
 	}
 }
 
-// Give user the prize
+/**
+	\fn int computePrize(int score, int usedPrize)
+	\brief Give user the prize, so as time passes, the score increases (da all'utente il 'premio', quindi con il passare del tempo lo score incrementa)
+	\param int score: the score before the new loop update (lo score prima dell'ultimo ciclo)
+	\param int usedPrize:
+	\return returns '1' if score gets certain values, otherwise returns '0' (ritorna '1' se lo score ottiene certi valori, altrimenti ritorna '0')
+*/
+
 int computePrize(int score, int usedPrize) {
 	if (score >= 20 && score <= 40 && usedPrize == 0) {
 		return 1;
@@ -89,7 +96,14 @@ int computePrize(int score, int usedPrize) {
 	return 0;
 }
 
-// The main engine!
+/**
+	\fn void startEngine(int highScore, struct user firstUser)
+	\brief The main engine of the game, it calls all the funcions needed (Il motore principale del gioco, chiama tutte le funzioni necessarie)
+	\param int highScore: the highest score achieved (lo score piu' alto raggiunto)
+	\param struct user firstUser: struct containing the data of the player (struct contenente i dati del giocatore)
+	\return void function, no return (funzione void, nessun return)
+*/
+
 void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));
 	int x, y, diX=5, prize=0, usedPrize=0, score=0, delayTime = 300000
@@ -210,22 +224,49 @@ int tests_run = 0;
 int tests_passed = 0;
 
 // sample test function 1
+
+/**
+	\fn static char * test_foo()
+	\brief test
+	\return void function, no return (funzione void, nessun return)
+*/
 static char * test_foo() {
     mu_assert("error, foo != 7", foo == 7);
 }
 
 // sample test function 2
+
+/**
+	\fn static char * test_bar()
+	\brief test
+	\return void function, no return (funzione void, nessun return)
+*/
+
 static char * test_bar() {
     mu_assert("error, bar != 5", bar == 5);
 }
 
 // put all tests here
+
+/**
+	\fn void all_test()
+	\brief call the test functions (chiama le funzioni test)
+	\return void function, no return (funzione void, nessun return)
+*/
 void all_tests() {
 	mu_run_test(test_foo);
 	mu_run_test(test_bar);
 }
 
 // call this to run all tests
+
+/**
+	\fn int run_all_tests(int argc, char **argv)
+	\brief call the test functions and print the result (chiama le funzioni test)
+	\param int argc: indicates the number of parameters entered in the program (indica il numero di stringhe inserite nel programma)
+	\param char **argv: array of the parameters entered in the program (array dei parametri inseriti nel programma)
+	\return void function, no return (funzione void, nessun return)
+*/
 int run_all_tests(int argc, char **argv) {
 	if(argc<2 || strcmp(argv[1],"-test")!=0) {
 		return -1;
