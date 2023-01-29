@@ -6,8 +6,12 @@
 #include "menu.h"
 #include "game.h"
 #include "appearance.h"
-
-
+/**
+	\fn void startMenu
+	\brief  show best score and get user information (mostra il miglior punteggio e prende le informazioni dell'utente)
+	parameters not found 
+	\return void function, no return (funzione void, nessun return)
+*/
 void startMenu() {
 	struct user firstUser;
 	int highScore;
@@ -35,6 +39,17 @@ void startMenu() {
 	noecho();
 	startEngine(highScore, firstUser);
 }
+
+/**
+	\fn void endGame(int score, int highScore, int diY, int diX, struct user firstUser)
+	\brief  saves the score and takes you back to the initial menu (salva il punteggio e ti riporta al menu iniziale )
+	\param int highScore: best score (miglior punteggio)
+	\param struct user firsUsers: structure for user data (struttura per dati utente)
+	\param int score: score done(punteggio fatto)
+	\param int y: diY coordinate of the characters to clean (coordinata y dei caratteri da stampare)
+	\param int x: diX coordinate of the characters to clean (coordinata x dei caratteri da stampare)
+	\return void function, no return (funzione void, nessun return)
+*/
 
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser) {
 	nodelay(stdscr, FALSE);
