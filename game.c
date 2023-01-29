@@ -265,8 +265,8 @@ void all_tests() {
 	\brief call the test functions and print the result (chiama le funzioni test)
 	\param int argc: indicates the number of parameters entered in the program (indica il numero di stringhe inserite nel programma)
 	\param char **argv: array of the parameters entered in the program (array dei parametri inseriti nel programma)
-	\return void function, no return (funzione void, nessun return)
-*/
+	\return int fuction, return tests_run-tests_passed or -1(funzione int, return  tests_run-tests_passed o -1)
+	*/
 int run_all_tests(int argc, char **argv) {
 	if(argc<2 || strcmp(argv[1],"-test")!=0) {
 		return -1;

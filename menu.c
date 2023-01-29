@@ -9,7 +9,7 @@
 /**
 	\fn void startMenu
 	\brief  show best score and get user information (mostra il miglior punteggio e prende le informazioni dell'utente)
-	parameters not found 
+	\param  no parameters needed (nessun parametro richiesto)
 	\return void function, no return (funzione void, nessun return)
 */
 void startMenu() {
