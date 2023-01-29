@@ -1,3 +1,9 @@
+/**
+	\file appearance.c
+	\author Farbod Ahmadian
+	\version 1.0
+	\date 2023-01-29
+*/
 #include <ncurses.h>
 #include <unistd.h>
 #include <time.h>
