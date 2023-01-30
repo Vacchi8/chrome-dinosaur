@@ -1,10 +1,10 @@
 // build with "gcc main.c game.c menu.c appearance.c -lncurses -o dino.exe"
 
 /**
-	\file appearance.c
+	\file main.c
 	\author Farbod Ahmadian
 	\version 1.0
-	\date 2023-01-26
+	\date 2023-01-30
 */
 
 #include <ncurses.h>
