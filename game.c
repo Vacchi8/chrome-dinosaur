@@ -219,12 +219,60 @@ void startEngine(int highScore, struct user firstUser) {
 int foo = 4;
 int bar = 5;
 
+
 // init tests vars
 int tests_run = 0;
 int tests_passed = 0;
 
 // sample test function 1
+void test_checkGame() {
+	int  ritorno= 0;
+	mu_assert("ERRORE TEST 1 ", checkGame(1,14,1,1) == ritorno);
+}
 
+void test_checkGame2() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 2", checkGame(1,14,1,12) == ritorno);
+}
+
+void test_checkGame3() {
+	int  ritorno= 0;
+	mu_assert("ERRORE TEST 3", checkGame(1,15,1,5) == ritorno);
+}
+
+void test_checkGame4() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 4", checkGame(1,-16,1,4) == ritorno);
+}
+
+void test_checkGame5() {
+	int  ritorno= 0;
+	mu_assert("ERRORE TEST 5", checkGame(1,5,1,-5) == ritorno);
+}
+
+void test_checkGame6() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 6", checkGame(2,4,92,14) == ritorno);
+}
+
+void test_checkGame7() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 7", checkGame(24,10,13,15) == ritorno);
+}
+
+void test_checkGame8() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 8", checkGame(1,3,9,4) == ritorno);
+}
+
+void test_checkGame9() {
+	int  ritorno= 1;
+	mu_assert("ERRORE TEST 9", checkGame(2,18,1,24) == ritorno);
+}
+void test_checkGame10() {
+	int  ritorno= 0;
+	mu_assert("ERRORE TEST 10", checkGame(5,23,5,7) == ritorno);
+}
 /**
 	\fn static char * test_foo()
 	\brief test
@@ -256,6 +304,16 @@ static char * test_bar() {
 void all_tests() {
 	mu_run_test(test_foo);
 	mu_run_test(test_bar);
+	mu_run_test(test_checkGame);
+	mu_run_test(test_checkGame2);
+	mu_run_test(test_checkGame3);
+	mu_run_test(test_checkGame4);
+	mu_run_test(test_checkGame5);
+	mu_run_test(test_checkGame6);
+	mu_run_test(test_checkGame7);
+	mu_run_test(test_checkGame8);
+	mu_run_test(test_checkGame9);
+	mu_run_test(test_checkGame10);
 }
 
 // call this to run all tests
