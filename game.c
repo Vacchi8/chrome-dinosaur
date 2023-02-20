@@ -366,6 +366,16 @@ void all_tests() {
     mu_run_test(test_checkGame8);
     mu_run_test(test_checkGame9);
     mu_run_test(test_checkGame10);
+    mu_run_test(test_computePrize1);
+    mu_run_test(test_computePrize2);
+    mu_run_test(test_computePrize3);
+    mu_run_test(test_computePrize4);
+    mu_run_test(test_computePrize5);
+    mu_run_test(test_computePrize6);
+    mu_run_test(test_computePrize7);
+    mu_run_test(test_computePrize8);
+    mu_run_test(test_computePrize9);
+    mu_run_test(test_computePrize10);
 }
 
 // call this to run all tests
