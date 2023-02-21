@@ -323,6 +323,46 @@ void test_computePrize10() {
     mu_assert("ERRORE TEST 10 COMPUERPRIZE", computePrize(69, 1)== ritono);
 
 }
+void test_computetime1() {
+	int ritorno = 1;
+	mu_assert("ERRORE TEST 1 COMPUTETIME", computetime(0) == ritorno);
+}
+void test_computetime2() {
+	int ritorno = 4;
+	mu_assert("ERRORE TEST 2 COMPUTETIME", computetime(3) == ritorno);
+}
+void test_computetime3() {
+	int ritorno = 48;
+	mu_assert("ERRORE TEST 3 COMPUTETIME", computetime(47) == ritorno);
+}
+void test_computetime4() {
+	int ritorno = 12;
+	mu_assert("ERRORE TEST 4 COMPUTETIME", computetime(11) == ritorno);
+}
+void test_computetime5() {
+	int ritorno = 41;
+	mu_assert("ERRORE TEST 5 COMPUTETIME", computetime(40) == ritorno);
+}
+void test_computetime6() {
+	int ritorno = 101;
+	mu_assert("ERRORE TEST 6 COMPUTETIME", computetime(100) == ritorno);
+}
+void test_computetime7() {
+	int ritorno = 104;
+	mu_assert("ERRORE TEST 7 COMPUTETIME", computetime(103) == ritorno);
+}
+void test_computetime8() {
+	int ritorno = 210;
+	mu_assert("ERRORE TEST 8 COMPUTETIME", computetime(209) == ritorno);
+}
+void test_computetime9() {
+	int ritorno = 847;
+	mu_assert("ERRORE TEST 9 COMPUTETIME", computetime(846) == ritorno);
+}
+void test_computetime10() {
+	int ritorno = 357;
+	mu_assert("ERRORE TEST 10 COMPUTETIME", computetime(356) == ritorno);
+}
 
 
 /**
@@ -376,6 +416,16 @@ void all_tests() {
     mu_run_test(test_computePrize8);
     mu_run_test(test_computePrize9);
     mu_run_test(test_computePrize10);
+	mu_run_test(test_computetime1);
+	mu_run_test(test_computetime2);
+	mu_run_test(test_computetime3);
+	mu_run_test(test_computetime4);
+	mu_run_test(test_computetime5);
+	mu_run_test(test_computetime6);
+	mu_run_test(test_computetime7);
+	mu_run_test(test_computetime8);
+	mu_run_test(test_computetime9);
+	mu_run_test(test_computetime10);
 }
 
 // call this to run all tests
